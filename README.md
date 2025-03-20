@@ -1,1 +1,80 @@
-Coming soon
+
+# README - Open-Meteo Vejrdata Konsolprogram
+
+## Beskrivelse
+
+Dette er et konsolprogram, der henter og viser vejrdata fra Open-Meteo API'et. Programmet giver brugeren mulighed for at se aktuel vejrstatus, højeste og laveste temperaturer inden for de næste 24 timer, gennemsnitlig vindhastighed samt en time-for-time oversigt over vejret de næste 24 timer.
+
+## Dokumentation
+
+Officiel API-dokumentation: Open-Meteo API
+
+## Installation og Konfiguration
+
+1. Omdøb `config-example.env` til `config.env`.
+2. Åbn `config.env` og indsæt en API-URL fra Open-Meteo.com.
+
+For at få en API URL, der passer til dette program, følg disse trin på Open-Meteo:
+
+- **Location and Time**:
+    - **Latitude**: 55,6759
+    - **Longitude**: 12,5655
+    - **Timezone**: Europe/Berlin
+    - **Latitude**: 51,5085
+    - **Longitude**: -0,1257
+    - **Timezone**: Europe/Berlin
+
+- **Time Forecast Length**:
+    - **Forecast Days**: 7
+    - **Past Days**: 1 week
+
+- Åben **Additional Variables and Options** og vælg **24 timer** under **Past Hours**.
+
+- **Marker følgende**:
+    - **Daily Weather Variables**:
+        - Rain Sum
+        - Maximum Temperature (2 m)
+        - Minimum Temperature (2 m)
+        - Maximum Wind Speed (10 m)
+    - **Current Weather**:
+        - Temperature (2 m)
+        - Wind Speed (10 m)
+        - Is Day or Night
+        - Rain
+    - **Hourly Weather Variables**:
+        - Temperature (2 m)
+        - Wind Speed (10 m)
+    - **Settings**:
+        - Temperature Unit: Celsius °C
+        - Wind Speed Unit: Km/h
+        - Precipitation Unit: Millimeter
+        - Time Format: ISO 8601 (e.g., 2025-03-20)
+
+3. Sørg for at have .NET installeret.
+4. Clone eller download dette repository.
+5. Installer nødvendige NuGet-pakker:
+    - Newtonsoft.Json
+    - System.Net.Http
+
+6. Kør programmet:
+    - Følg menuen for at navigere og se vejrdata.
+
+## Funktioner
+
+### Minimumskrav:
+- Hent og vis:
+    - Vejrudsigten lige nu (mindst to datasæt).
+    - Højeste temperatur de næste 24 timer.
+    - Laveste temperatur de næste 24 timer.
+    - Gennemsnitlig vindhastighed de næste 24 timer.
+    - Liste over vejret time-for-time de næste 24 timer (sorteret faldende).
+
+### Ekstra funktioner:
+- Menu-navigation for at skifte mellem visninger, såsom:
+    - Vejret lige nu.
+    - Tidspunktet med størst sandsynlighed for regn.
+    - Vejret de seneste 24 timer.
+    - Vejret den seneste uge som et dagsskema i konsollen.
+- Mulighed for at vælge og gemme en by, så programmet husker den ved næste opstart.
+
+Tak fordi du bruger dette program! 🎉
