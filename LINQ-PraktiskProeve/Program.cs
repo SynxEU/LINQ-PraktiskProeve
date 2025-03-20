@@ -45,11 +45,12 @@ namespace LINQ_PraktiskProeve
                 Console.WriteLine("Vælg en mulighed:");
                 Console.WriteLine("1. Vejr lige nu");
                 Console.WriteLine("2. Vejret de seneste 24 timer");
-                Console.WriteLine("3. Vejret den seneste uge");
-                Console.WriteLine("4. Vejret for de næste 24 timer");
-                Console.WriteLine("5. Time-for-time vejr de næste 24 timer");
-                Console.WriteLine("6. Afslut");
-                Console.Write("Indtast valg (1-6): ");
+                Console.WriteLine("3. Vejret for de næste 24 timer");
+                Console.WriteLine("4. Time-for-time vejr de næste 24 timer");
+                Console.WriteLine("5. Vejret den seneste uge");
+                Console.WriteLine("6. Vejret den næste uge");
+                Console.WriteLine("7. Afslut");
+                Console.Write("Indtast valg (1-7): ");
                 ConsoleKeyInfo choice = Console.ReadKey();
 
                 Console.Clear();
@@ -63,16 +64,19 @@ namespace LINQ_PraktiskProeve
                         ShowLast24Hours.ShowLast24HoursWeather(weatherData);
                         break;
                     case ConsoleKey.D3:
-                        ShowLastWeek.ShowLastWeekWeather(weatherData);
-                        break;
-                    case ConsoleKey.D4:
                         ShowNext24Hours.ShowNext24HoursSummary(weatherData);
                         break;
-                    case ConsoleKey.D5:
+                    case ConsoleKey.D4:
                         Show24HoursDetail.ShowNext24HoursDetailed(weatherData);
                         break;
+                    case ConsoleKey.D5:
+                        ShowLastWeek.ShowLastWeekWeather(weatherData);
+                        break;
                     case ConsoleKey.D6:
-                    case ConsoleKey.NumPad6:
+                        ShowNextWeek.ShowNextWeekWeather(weatherData);
+                        break;
+                    case ConsoleKey.D7:
+                    case ConsoleKey.NumPad7:
                     case ConsoleKey.Escape:
                         Environment.Exit(1);
                         break;
@@ -85,8 +89,8 @@ namespace LINQ_PraktiskProeve
                 {
                     Console.WriteLine("\nTryk på en tast for at fortsætte...");
                     ConsoleKeyInfo keyPress = Console.ReadKey();
-                    running = keyPress.Key != ConsoleKey.Escape && keyPress.Key != ConsoleKey.D6 &&
-                              keyPress.Key != ConsoleKey.NumPad6;
+                    running = keyPress.Key != ConsoleKey.Escape && keyPress.Key != ConsoleKey.D7 &&
+                              keyPress.Key != ConsoleKey.NumPad7;
                     Console.Clear();
                 }
 
