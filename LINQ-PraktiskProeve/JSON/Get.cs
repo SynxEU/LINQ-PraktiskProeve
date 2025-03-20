@@ -13,9 +13,9 @@ public class Get
     {
         using (HttpClient client = new HttpClient())
         {
-            var response = await client.GetAsync(url);
+            HttpResponseMessage response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsStringAsync();
+            string content = await response.Content.ReadAsStringAsync();
 
             List<Root> weatherData = JsonConvert.DeserializeObject<List<Root>>(content);
             Save.SaveJsonToFile(content);

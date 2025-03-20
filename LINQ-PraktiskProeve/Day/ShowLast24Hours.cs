@@ -7,9 +7,9 @@ public class ShowLast24Hours
 {
     public static void ShowLast24HoursWeather(Root weatherData)
     {
-        var times = weatherData.Hourly?.Time;
-        var temperatures = weatherData.Hourly?.Temperature2m;
-        var windSpeeds = weatherData.Hourly?.WindSpeed10m;
+        List<string>? times = weatherData.Hourly?.Time;
+        List<object>? temperatures = weatherData.Hourly?.Temperature2m;
+        List<object> windSpeeds = weatherData.Hourly?.WindSpeed10m;
 
         if (times != null && temperatures != null && windSpeeds != null)
         {

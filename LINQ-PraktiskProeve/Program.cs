@@ -21,7 +21,7 @@ namespace LINQ_PraktiskProeve
             );
             string envFilePath = Path.Combine(folderPath, "config.env");
             Env.Load(envFilePath);
-            var url = Environment.GetEnvironmentVariable("API_URL");
+            string? url = Environment.GetEnvironmentVariable("API_URL");
             
             try
             {
@@ -50,7 +50,7 @@ namespace LINQ_PraktiskProeve
                 Console.WriteLine("5. Time-for-time vejr de næste 24 timer");
                 Console.WriteLine("6. Afslut");
                 Console.Write("Indtast valg (1-6): ");
-                var choice = Console.ReadKey();
+                ConsoleKeyInfo choice = Console.ReadKey();
 
                 Console.Clear();
 
@@ -84,7 +84,7 @@ namespace LINQ_PraktiskProeve
                 if (running)
                 {
                     Console.WriteLine("\nTryk på en tast for at fortsætte...");
-                    var keyPress = Console.ReadKey();
+                    ConsoleKeyInfo keyPress = Console.ReadKey();
                     running = keyPress.Key != ConsoleKey.Escape && keyPress.Key != ConsoleKey.D6 &&
                               keyPress.Key != ConsoleKey.NumPad6;
                     Console.Clear();
@@ -97,7 +97,7 @@ namespace LINQ_PraktiskProeve
         {
             try
             {
-                var current = weatherData.Current;
+                Current current = weatherData.Current;
                 if (current == null)
                 {
                     Console.WriteLine("Fejl: Ingen aktuelle vejrdata tilgængelige.");

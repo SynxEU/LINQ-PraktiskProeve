@@ -8,19 +8,19 @@ public static class ShowLastWeek
 {
     public static void ShowLastWeekWeather(Root weatherData)
     {
-        var days = weatherData.Daily?.Time;
-        var maxTemps = weatherData.Daily?.Temperature2mMax;
-        var minTemps = weatherData.Daily?.Temperature2mMin;
-        var rainSum = weatherData.Daily?.RainSum;
-        var windMax = weatherData.Daily?.WindSpeed10mMax;
+        List<string>? days = weatherData.Daily?.Time;
+        List<double>? maxTemps = weatherData.Daily?.Temperature2mMax;
+        List<double>? minTemps = weatherData.Daily?.Temperature2mMin;
+        List<double>? rainSum = weatherData.Daily?.RainSum;
+        List<double> windMax = weatherData.Daily?.WindSpeed10mMax;
 
         if (days != null && maxTemps != null && minTemps != null && rainSum != null && windMax != null)
         {
             Console.WriteLine("Vejret den seneste uge:");
             for (int i = 0; i < 7; i++)
             {
-                var date = DateTime.Parse(days[i]);
-                var dayOfWeek = date.ToString("dddd", new CultureInfo("da-DK"));
+                DateTime date = DateTime.Parse(days[i]);
+                string dayOfWeek = date.ToString("dddd", new CultureInfo("da-DK"));
                 Console.WriteLine("--------------------------------------------------");
                 Console.WriteLine($"Dag: {dayOfWeek} | Dato: {DateTime.Parse(days[i]).ToShortDateString()}");
                 Console.WriteLine($"Max Temp: {maxTemps[i]}°C | Min Temp: {minTemps[i]}°C");

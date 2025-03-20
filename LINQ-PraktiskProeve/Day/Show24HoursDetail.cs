@@ -11,9 +11,9 @@ public class Show24HoursDetail
         if (weatherData.Hourly != null)
         {
             int currentHour = DateTime.Now.Hour + 14;
-            var times = weatherData.Hourly.Time;
-            var temperatures = weatherData.Hourly.Temperature2m;
-            var windSpeeds = weatherData.Hourly.WindSpeed10m;
+            List<string>? times = weatherData.Hourly.Time;
+            List<object>? temperatures = weatherData.Hourly.Temperature2m;
+            List<object>? windSpeeds = weatherData.Hourly.WindSpeed10m;
 
             if (times != null && temperatures != null && windSpeeds != null)
             {
