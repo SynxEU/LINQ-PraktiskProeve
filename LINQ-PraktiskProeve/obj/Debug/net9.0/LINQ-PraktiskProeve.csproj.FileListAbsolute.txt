@@ -1,0 +1,17 @@
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\bin\Debug\net9.0\LINQ-PraktiskProeve.exe
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\bin\Debug\net9.0\LINQ-PraktiskProeve.deps.json
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\bin\Debug\net9.0\LINQ-PraktiskProeve.runtimeconfig.json
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\bin\Debug\net9.0\LINQ-PraktiskProeve.dll
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\bin\Debug\net9.0\LINQ-PraktiskProeve.pdb
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.csproj.AssemblyReference.cache
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.AssemblyInfoInputs.cache
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.AssemblyInfo.cs
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.csproj.CoreCompileInputs.cache
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-Pra.EBC9C78C.Up2Date
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.dll
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\refint\LINQ-PraktiskProeve.dll
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.pdb
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.genruntimeconfig.cache
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\ref\LINQ-PraktiskProeve.dll
