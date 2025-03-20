@@ -15,20 +15,55 @@ namespace LINQ_PraktiskProeve
         static void Main(string[] args)
         {
             string folderPath = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), 
-                "RiderProjects", 
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "RiderProjects",
                 "LINQ-PraktiskProeve"
             );
             string envFilePath = Path.Combine(folderPath, "config.env");
             Env.Load(envFilePath);
             string? url = Environment.GetEnvironmentVariable("API_URL");
-            
+
+            Console.WriteLine("Vælg en by:");
+            Console.WriteLine("1. København");
+            Console.WriteLine("2. London");
+
+            ConsoleKeyInfo locationChoice = Console.ReadKey();
+            string selectedLocation = string.Empty;
+
+            if (locationChoice.Key == ConsoleKey.D1 || locationChoice.Key == ConsoleKey.NumPad1)
+            {
+                selectedLocation = "Copenhagen";
+            }
+            else if (locationChoice.Key == ConsoleKey.D2 || locationChoice.Key == ConsoleKey.NumPad2)
+            {
+                selectedLocation = "London";
+            }
+            else
+            {
+                Console.WriteLine("Ugyldigt valg.");
+                return;
+            }
+
             try
             {
                 List<Root> root = Get.GetWeatherDataAsync(url);
+                
+                Root selectedWeatherData = selectedLocation 
+                    switch
+                {
+                    "Copenhagen" => root.Find(r => r.Latitude == 55.6785 && r.Longitude == 12.570435),
+                    "London" => root.Find(r => r.Latitude == 51.5 && r.Longitude == -0.120000124),
+                    _ => null
+                };
 
-                foreach (Root roots in root)
-                    ProcessWeatherData(roots);
+                if (selectedWeatherData != null)
+                {
+                    ProcessWeatherData(selectedWeatherData);
+                }
+                else
+                {
+                    Console.WriteLine("Der blev ikke fundet vejrdata for den valgte by.");
+                }
             }
             catch (Exception e)
             {
@@ -42,6 +77,7 @@ namespace LINQ_PraktiskProeve
             do
             {
                 Console.Clear();
+                Console.WriteLine($"Vejrdata for {weatherData.Latitude}, {weatherData.Longitude}");
                 Console.WriteLine("Vælg en mulighed:");
                 Console.WriteLine("1. Vejr lige nu");
                 Console.WriteLine("2. Vejret de seneste 24 timer");
@@ -96,7 +132,7 @@ namespace LINQ_PraktiskProeve
 
             } while (running);
         }
-        
+
         static void ShowCurrentWeather(Root weatherData)
         {
             try
@@ -120,4 +156,3 @@ namespace LINQ_PraktiskProeve
         }
     }
 }
-
