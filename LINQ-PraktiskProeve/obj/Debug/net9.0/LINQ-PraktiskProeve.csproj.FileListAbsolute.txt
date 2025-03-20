@@ -15,3 +15,4 @@ C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debu
 C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.pdb
 C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.genruntimeconfig.cache
 C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\ref\LINQ-PraktiskProeve.dll
+C:\Users\jonas\Desktop\Skole\H3\LINQ-PraktiskProeve\LINQ-PraktiskProeve\obj\Debug\net9.0\LINQ-PraktiskProeve.sourcelink.json

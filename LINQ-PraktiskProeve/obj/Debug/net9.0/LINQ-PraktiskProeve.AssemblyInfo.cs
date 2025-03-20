@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LINQ-PraktiskProeve")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dc84e943b6ff0ab4f1863a93be0b05dae7d082f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LINQ-PraktiskProeve")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LINQ-PraktiskProeve")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
