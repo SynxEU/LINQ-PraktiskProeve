@@ -96,7 +96,7 @@ namespace LINQ_PraktiskProeve
 
             } while (running);
         }
-
+        
         static void ShowCurrentWeather(Root weatherData)
         {
             try
