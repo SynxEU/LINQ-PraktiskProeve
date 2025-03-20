@@ -9,13 +9,13 @@ namespace LINQ_PraktiskProeve.JSON;
 
 public class Get
 {
-    public static async Task<List<Root>> GetWeatherDataAsync(string url)
+    public static List<Root> GetWeatherDataAsync(string url)
     {
         using (HttpClient client = new HttpClient())
         {
-            HttpResponseMessage response = await client.GetAsync(url);
+            HttpResponseMessage response = client.GetAsync(url).Result;
             response.EnsureSuccessStatusCode();
-            string content = await response.Content.ReadAsStringAsync();
+            string content = response.Content.ReadAsStringAsync().Result;
 
             List<Root> weatherData = JsonConvert.DeserializeObject<List<Root>>(content);
             Save.SaveJsonToFile(content);

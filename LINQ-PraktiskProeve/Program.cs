@@ -12,7 +12,7 @@ namespace LINQ_PraktiskProeve
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             string folderPath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), 
@@ -25,7 +25,7 @@ namespace LINQ_PraktiskProeve
             
             try
             {
-                List<Root> root = await Get.GetWeatherDataAsync(url);
+                List<Root> root = Get.GetWeatherDataAsync(url);
 
                 foreach (Root roots in root)
                     ProcessWeatherData(roots);
