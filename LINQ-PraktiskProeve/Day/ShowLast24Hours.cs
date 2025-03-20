@@ -1,3 +1,4 @@
+using System;
 using LINQ_PraktiskProeve.Models;
 
 namespace LINQ_PraktiskProeve.Day;
@@ -12,7 +13,7 @@ public class ShowLast24Hours
 
         if (times != null && temperatures != null && windSpeeds != null)
         {
-            Console.WriteLine("\nVejret de seneste 24 timer:");
+            Console.WriteLine("Vejret de seneste 24 timer:");
             for (int i = 0; i < 25; i++)
             {
                 Console.WriteLine(

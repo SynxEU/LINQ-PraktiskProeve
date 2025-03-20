@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using DotNetEnv;
 using LINQ_PraktiskProeve.Models;
 using Newtonsoft.Json;
 

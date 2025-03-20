@@ -1,4 +1,9 @@
-﻿using LINQ_PraktiskProeve.Day;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using DotNetEnv;
+using LINQ_PraktiskProeve.Day;
 using LINQ_PraktiskProeve.JSON;
 using LINQ_PraktiskProeve.Models;
 using LINQ_PraktiskProeve.Week;
@@ -9,10 +14,15 @@ namespace LINQ_PraktiskProeve
     {
         static async Task Main(string[] args)
         {
-            var client = new HttpClient();
-            var url =
-                "https://api.open-meteo.com/v1/forecast?latitude=55.6759,51.5085&longitude=12.5655,-0.1257&daily=rain_sum,temperature_2m_max,temperature_2m_min,wind_speed_10m_max&hourly=temperature_2m,wind_speed_10m&current=temperature_2m,rain,is_day,wind_speed_10m&timezone=Europe%2FBerlin&past_days=7&past_hours=24";
-
+            string folderPath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), 
+                "RiderProjects", 
+                "LINQ-PraktiskProeve"
+            );
+            string envFilePath = Path.Combine(folderPath, "config.env");
+            Env.Load(envFilePath);
+            var url = Environment.GetEnvironmentVariable("API_URL");
+            
             try
             {
                 List<Root> root = await Get.GetWeatherDataAsync(url);
@@ -29,7 +39,7 @@ namespace LINQ_PraktiskProeve
         static void ProcessWeatherData(Root weatherData)
         {
             bool running = true;
-            while (running)
+            do
             {
                 Console.Clear();
                 Console.WriteLine("Vælg en mulighed:");
@@ -37,30 +47,33 @@ namespace LINQ_PraktiskProeve
                 Console.WriteLine("2. Vejret de seneste 24 timer");
                 Console.WriteLine("3. Vejret den seneste uge");
                 Console.WriteLine("4. Vejret for de næste 24 timer");
-                Console.WriteLine("5. Time-for-time vejr de næste 24 timer (sorteret)");
+                Console.WriteLine("5. Time-for-time vejr de næste 24 timer");
                 Console.WriteLine("6. Afslut");
                 Console.Write("Indtast valg (1-6): ");
-                var choice = Console.ReadLine();
+                var choice = Console.ReadKey();
 
-                switch (choice)
+                Console.Clear();
+
+                switch (choice.Key)
                 {
-                    case "1":
+                    case ConsoleKey.D1:
                         ShowCurrentWeather(weatherData);
                         break;
-                    case "2":
+                    case ConsoleKey.D2:
                         ShowLast24Hours.ShowLast24HoursWeather(weatherData);
                         break;
-                    case "3":
+                    case ConsoleKey.D3:
                         ShowLastWeek.ShowLastWeekWeather(weatherData);
                         break;
-                    case "4":
+                    case ConsoleKey.D4:
                         ShowNext24Hours.ShowNext24HoursSummary(weatherData);
                         break;
-                    case "5":
+                    case ConsoleKey.D5:
                         Show24HoursDetail.ShowNext24HoursDetailed(weatherData);
                         break;
-                    case "6":
-                        running = false;
+                    case ConsoleKey.D6:
+                    case ConsoleKey.NumPad6:
+                    case ConsoleKey.Escape:
                         Environment.Exit(1);
                         break;
                     default:
@@ -71,9 +84,13 @@ namespace LINQ_PraktiskProeve
                 if (running)
                 {
                     Console.WriteLine("\nTryk på en tast for at fortsætte...");
-                    Console.ReadKey();
+                    var keyPress = Console.ReadKey();
+                    running = keyPress.Key != ConsoleKey.Escape && keyPress.Key != ConsoleKey.D6 &&
+                              keyPress.Key != ConsoleKey.NumPad6;
+                    Console.Clear();
                 }
-            }
+
+            } while (running);
         }
 
         static void ShowCurrentWeather(Root weatherData)

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using LINQ_PraktiskProeve.Models;
 
 namespace LINQ_PraktiskProeve.Day;
@@ -8,7 +11,7 @@ public class ShowNext24Hours
     {
         if (weatherData.Hourly != null)
         {
-            int currentHour = DateTime.Now.Hour;
+            int currentHour = DateTime.Now.Hour + 14;
             var temperatures = weatherData.Hourly.Temperature2m;
             var windSpeeds = weatherData.Hourly.WindSpeed10m;
 
@@ -27,7 +30,7 @@ public class ShowNext24Hours
                 double minTemp = next24Temps.Min();
                 double avgWindSpeed = next24Winds.Average();
 
-                Console.WriteLine("\nVejr for de næste 24 timer:");
+                Console.WriteLine("Vejr for de næste 24 timer:");
                 Console.WriteLine($"Højeste Temp: {maxTemp}°C");
                 Console.WriteLine($"Laveste Temp: {minTemp}°C");
                 Console.WriteLine($"Gennemsnitlig Vindhastighed: {avgWindSpeed:F2} m/s");

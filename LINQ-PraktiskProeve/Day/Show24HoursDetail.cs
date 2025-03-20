@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using LINQ_PraktiskProeve.Models;
 
 namespace LINQ_PraktiskProeve.Day;
@@ -23,7 +25,7 @@ public class Show24HoursDetail
                         .OrderByDescending(x => x.Time)
                         .ToList();
 
-                Console.WriteLine("\nTime-for-time vejr de næste 24 timer (sorteret faldende):");
+                Console.WriteLine("Time-for-time vejr de næste 24 timer (sorteret faldende):");
                 foreach (var entry in weatherList)
                 {
                     Console.WriteLine(
