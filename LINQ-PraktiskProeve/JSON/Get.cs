@@ -17,7 +17,7 @@ public class Get
             response.EnsureSuccessStatusCode();
             string content = response.Content.ReadAsStringAsync().Result;
 
-            List<Root> weatherData = JsonConvert.DeserializeObject<List<Root>>(content);
+            List<Root> weatherData = JsonConvert.DeserializeObject<List<Root>>(content) ?? new List<Root>();
             Save.SaveJsonToFile(content);
 
             return weatherData;

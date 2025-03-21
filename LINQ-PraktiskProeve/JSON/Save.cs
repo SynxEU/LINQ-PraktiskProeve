@@ -22,11 +22,11 @@ public class Save
                 Directory.CreateDirectory(folderPath);
             }
 
-            File.WriteAllText(filePath, json.ToString());
+            File.WriteAllText(filePath, json);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Fejl ved gemning af JSON: {ex.Message}");
+            Console.WriteLine($"Fejl mens JSON blev gemt : {ex.Message}");
         }
     }
 }

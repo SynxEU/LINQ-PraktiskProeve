@@ -5,13 +5,13 @@ namespace LINQ_PraktiskProeve.Models;
 public class Current
 {
     [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
-    public string Time;
+    public string Time = string.Empty;
 
     [JsonProperty("interval", NullValueHandling = NullValueHandling.Ignore)]
     public int Interval;
 
     [JsonProperty("temperature_2m", NullValueHandling = NullValueHandling.Ignore)]
-    public double Temperature2m;
+    public double Temperature2M;
 
     [JsonProperty("rain", NullValueHandling = NullValueHandling.Ignore)]
     public double Rain;
@@ -20,5 +20,5 @@ public class Current
     public int IsDay;
 
     [JsonProperty("wind_speed_10m", NullValueHandling = NullValueHandling.Ignore)]
-    public double WindSpeed10m;   
+    public double WindSpeed10M;
 }

@@ -7,6 +7,7 @@ using LINQ_PraktiskProeve.Day;
 using LINQ_PraktiskProeve.JSON;
 using LINQ_PraktiskProeve.Models;
 using LINQ_PraktiskProeve.Week;
+using static System.Console;
 
 namespace LINQ_PraktiskProeve
 {
@@ -23,11 +24,11 @@ namespace LINQ_PraktiskProeve
             Env.Load(envFilePath);
             string? url = Environment.GetEnvironmentVariable("API_URL");
 
-            Console.WriteLine("Vælg en by:");
-            Console.WriteLine("1. København");
-            Console.WriteLine("2. London");
+            WriteLine("Vælg en by:");
+            WriteLine("1. København");
+            WriteLine("2. London");
 
-            ConsoleKeyInfo locationChoice = Console.ReadKey();
+            ConsoleKeyInfo locationChoice = ReadKey();
             string selectedLocation = string.Empty;
 
             if (locationChoice.Key == ConsoleKey.D1 || locationChoice.Key == ConsoleKey.NumPad1)
@@ -40,7 +41,7 @@ namespace LINQ_PraktiskProeve
             }
             else
             {
-                Console.WriteLine("Ugyldigt valg.");
+                WriteLine("Ugyldigt valg.");
                 return;
             }
 
@@ -62,34 +63,40 @@ namespace LINQ_PraktiskProeve
                 }
                 else
                 {
-                    Console.WriteLine("Der blev ikke fundet vejrdata for den valgte by.");
+                    WriteLine("Der blev ikke fundet vejrdata for den valgte by.");
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Fejl ved hentning af data: {e.Message}");
+                WriteLine($"Fejl ved hentning af data: {e.Message}");
             }
         }
 
         static void ProcessWeatherData(Root weatherData)
         {
             bool running = true;
+            string city = weatherData switch
+            {
+                { Latitude: >= 55.2 and <= 55.8, Longitude: >= 12.2 and <= 12.9 } => "København",
+                { Latitude: >= 51.0 and <= 51.6, Longitude: >= -0.3 and <= 0.3 } => "London",
+                _ => null
+            };
             do
             {
-                Console.Clear();
-                Console.WriteLine($"Vejrdata for {weatherData.Latitude}, {weatherData.Longitude}");
-                Console.WriteLine("Vælg en mulighed:");
-                Console.WriteLine("1. Vejr lige nu");
-                Console.WriteLine("2. Vejret de seneste 24 timer");
-                Console.WriteLine("3. Vejret for de næste 24 timer");
-                Console.WriteLine("4. Time-for-time vejr de næste 24 timer");
-                Console.WriteLine("5. Vejret den seneste uge");
-                Console.WriteLine("6. Vejret den næste uge");
-                Console.WriteLine("7. Afslut");
-                Console.Write("Indtast valg (1-7): ");
-                ConsoleKeyInfo choice = Console.ReadKey();
+                Clear();
+                WriteLine($"Vejrdata for {city}");
+                WriteLine("Vælg en mulighed:");
+                WriteLine("1. Vejr lige nu");
+                WriteLine("2. Vejret de seneste 24 timer");
+                WriteLine("3. Vejret for de næste 24 timer");
+                WriteLine("4. Time-for-time vejr de næste 24 timer");
+                WriteLine("5. Vejret den seneste uge");
+                WriteLine("6. Vejret den næste uge");
+                WriteLine("7. Afslut");
+                Write("Indtast valg (1-7): ");
+                ConsoleKeyInfo choice = ReadKey();
 
-                Console.Clear();
+                Clear();
 
                 switch (choice.Key)
                 {
@@ -115,19 +122,24 @@ namespace LINQ_PraktiskProeve
                     case ConsoleKey.NumPad7:
                     case ConsoleKey.Escape:
                         Environment.Exit(1);
+                        running = false;
                         break;
                     default:
-                        Console.WriteLine("Ugyldigt valg, prøv igen.");
+                        WriteLine("Ugyldigt valg, prøv igen.");
                         break;
                 }
 
                 if (running)
                 {
-                    Console.WriteLine("\nTryk på en tast for at fortsætte...");
-                    ConsoleKeyInfo keyPress = Console.ReadKey();
+                    WriteLine("\nTryk på en tast for at fortsætte...");
+                    ConsoleKeyInfo keyPress = ReadKey();
                     running = keyPress.Key != ConsoleKey.Escape && keyPress.Key != ConsoleKey.D7 &&
                               keyPress.Key != ConsoleKey.NumPad7;
-                    Console.Clear();
+                    Clear();
+                }
+                else
+                {
+                    WriteLine("\nVi ses næste gang :)");
                 }
 
             } while (running);
@@ -140,18 +152,18 @@ namespace LINQ_PraktiskProeve
                 Current current = weatherData.Current;
                 if (current == null)
                 {
-                    Console.WriteLine("Fejl: Ingen aktuelle vejrdata tilgængelige.");
+                    WriteLine("Fejl: Ingen aktuelle vejrdata tilgængelige.");
                     return;
                 }
 
-                Console.WriteLine("Vejrudsigten lige nu:");
-                Console.WriteLine($"Temperatur: {current.Temperature2m}°C");
-                Console.WriteLine($"Regn i dag: {current.Rain} mm");
-                Console.WriteLine($"Er det dag? {(current.IsDay == 1 ? "Ja" : "Nej")}");
+                WriteLine("Vejrudsigten lige nu:");
+                WriteLine($"Temperatur: {current.Temperature2M}°C");
+                WriteLine($"Regn i dag: {current.Rain} mm");
+                WriteLine($"Er det dag? {(current.IsDay == 1 ? "Ja" : "Nej")}");
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fejl ved visning af data.");
+                WriteLine($"Fejl ved visning af data: {e.Message}");
             }
         }
     }

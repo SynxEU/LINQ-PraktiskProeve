@@ -17,31 +17,31 @@ public class Root
     public int UtcOffsetSeconds;
 
     [JsonProperty("timezone", NullValueHandling = NullValueHandling.Ignore)]
-    public string Timezone;
+    public string Timezone = String.Empty;
 
     [JsonProperty("timezone_abbreviation", NullValueHandling = NullValueHandling.Ignore)]
-    public string TimezoneAbbreviation;
+    public string TimezoneAbbreviation  = String.Empty;
 
     [JsonProperty("elevation", NullValueHandling = NullValueHandling.Ignore)]
     public double Elevation;
 
     [JsonProperty("current_units", NullValueHandling = NullValueHandling.Ignore)]
-    public CurrentUnits CurrentUnits;
+    public CurrentUnits CurrentUnits = new();
 
     [JsonProperty("current", NullValueHandling = NullValueHandling.Ignore)]
-    public Current Current;
+    public Current Current = new();
 
     [JsonProperty("hourly_units", NullValueHandling = NullValueHandling.Ignore)]
-    public HourlyUnits HourlyUnits;
+    public HourlyUnits HourlyUnits = new();
 
     [JsonProperty("hourly", NullValueHandling = NullValueHandling.Ignore)]
-    public Hourly Hourly;
+    public Hourly Hourly = new();
 
     [JsonProperty("daily_units", NullValueHandling = NullValueHandling.Ignore)]
-    public DailyUnits DailyUnits;
+    public DailyUnits DailyUnits = new();
 
     [JsonProperty("daily", NullValueHandling = NullValueHandling.Ignore)]
-    public Daily Daily;
+    public Daily Daily = new();
 
     [JsonProperty("location_id", NullValueHandling = NullValueHandling.Ignore)]
     public int? LocationId;
