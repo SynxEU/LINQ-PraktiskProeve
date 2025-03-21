@@ -83,7 +83,7 @@ namespace LINQ_PraktiskProeve
             bool running = true;
 
             // Bestem byen baseret på latitude og longitude
-            string city = weatherData switch
+            string? city = weatherData switch
             {
                 { Latitude: >= 55.2 and <= 55.8, Longitude: >= 12.2 and <= 12.9 } => "København", // København
                 { Latitude: >= 51.0 and <= 51.6, Longitude: >= -0.3 and <= 0.3 } => "London", // London
