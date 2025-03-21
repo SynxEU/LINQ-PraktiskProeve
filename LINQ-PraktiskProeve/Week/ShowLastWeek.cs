@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using LINQ_PraktiskProeve.Models;
+using Spectre.Console;
 
 namespace LINQ_PraktiskProeve.Week;
 
@@ -19,16 +20,23 @@ public static class ShowLastWeek
             List<double> minTemps = weatherData.Daily.Temperature2MMin;
             List<double> rainSum = weatherData.Daily.RainSum;
             List<double> windMax = weatherData.Daily.WindSpeed10MMax;
-            Console.WriteLine("Vejret den seneste uge:");
+            Table table = new Table();
+    
+            table.AddColumn("Dag");
+            table.AddColumn("Max Temp (°C)");
+            table.AddColumn("Min Temp (°C)");
+            table.AddColumn("Regn (mm)");
+            table.AddColumn("Max Vind (m/s)");
             for (int i = 0; i < 7; i++)
             {
                 DateTime date = DateTime.Parse(days[i]);
                 string dayOfWeek = date.ToString("dddd", new CultureInfo("da-DK"));
-                Console.WriteLine("--------------------------------------------------");
-                Console.WriteLine($"Dag: {dayOfWeek} | Dato: {DateTime.Parse(days[i]).ToShortDateString()}");
-                Console.WriteLine($"Max Temp: {maxTemps[i]}°C | Min Temp: {minTemps[i]}°C");
-                Console.WriteLine($"Regn: {rainSum[i]} mm | Max vind: {windMax[i]} m/s");
+                
+                string dato = $"{dayOfWeek} {date.ToShortDateString()}";
+                
+                table.AddRow(dato, maxTemps[i] + "°C", minTemps[i] + "°C", rainSum[i] + " mm", windMax[i] + " m/s");
             }
+            AnsiConsole.Write(table);
         }
         else
         {

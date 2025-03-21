@@ -27,6 +27,7 @@ namespace LINQ_PraktiskProeve
             WriteLine("Vælg en by:");
             WriteLine("1. København");
             WriteLine("2. London");
+            Write("Indtast valg (1-2): ");
 
             ConsoleKeyInfo locationChoice = ReadKey();
             string selectedLocation = string.Empty;
@@ -121,8 +122,8 @@ namespace LINQ_PraktiskProeve
                     case ConsoleKey.D7:
                     case ConsoleKey.NumPad7:
                     case ConsoleKey.Escape:
-                        Environment.Exit(1);
                         running = false;
+                        Environment.Exit(1);
                         break;
                     default:
                         WriteLine("Ugyldigt valg, prøv igen.");
