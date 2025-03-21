@@ -1,5 +1,13 @@
-
 # README - Open-Meteo Vejrdata Konsolprogram
+
+## Table of Content
+
+1. [Beskrivelse](#beskrivelse)
+2. [Dokumentation](#dokumentation)
+3. [Installation og Konfiguration](#installation-og-konfiguration)
+4. [Funktioner](#funktioner)  
+   4.1 [Minimumskrav](#minimumskrav)  
+   4.2 [Ekstra funktioner](#ekstra-funktioner)
 
 ## Beskrivelse
 
@@ -55,7 +63,7 @@ For at få den API URL, der passer til dette program, følg disse trin på Open-
             - Time Format: ISO 8601 (e.g., 2025-03-20)
 
 5. Omdøb `config-example.env` til `config.env`.
-6. Åbn `config.env` og indsæt en API-URL fra Open-Meteo.com.
+6. Åbn `config.env` og indsæt den API-URL du lige har lavet fra Open-Meteo.com.
 
 7. Kør programmet:
     - Følg menuen for at navigere og se vejrdata.
