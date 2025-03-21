@@ -26,6 +26,7 @@ Officiel API-dokumentation: [Open-Meteo.com](https://open-meteo.com/en/docs)
 3. Installer nødvendige NuGet-pakker:
     - Newtonsoft.Json
     - System.Net.Http
+    - Spectre.Console
       
 4. Du skal bruge en API URL for dette program, du kan hente en API URL fra [Open-Meteo.com](https://open-meteo.com/en/docs)
 
