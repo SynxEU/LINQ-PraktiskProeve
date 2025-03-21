@@ -65,8 +65,9 @@ For at få den API URL, der passer til dette program, følg disse trin på Open-
 
 5. Omdøb `config-example.env` til `config.env`.
 6. Åbn `config.env` og indsæt den API-URL du lige har lavet fra Open-Meteo.com.
+   ![File](image.jpg)
 
-7. Kør programmet:
+8. Kør programmet:
     - Følg menuen for at navigere og se vejrdata.
 
 ## Funktioner
