@@ -10,7 +10,6 @@ public static class ShowLastWeek
     /// <summary>
     /// Vist data for vejret de sidste 7 dage, inklusiv temperaturer, regn og vind.
     /// </summary>
-    /// <param name="weatherData">Vejrdata, der indeholder daglige målinger.</param>
     public static void ShowLastWeekWeather(Root weatherData)
     {
         // Kontrollerer om der er tilgængelige data for de daglige vejrmålinger

@@ -9,7 +9,6 @@ public class ShowNextWeek
     /// <summary>
     /// Vist vejrinformation for den næste uge, inklusiv temperaturer, regn og vind.
     /// </summary>
-    /// <param name="weatherData">Vejrdata, der indeholder daglige målinger.</param>
     public static void ShowNextWeekWeather(Root weatherData)
     {
         // Kontrollerer om der er tilgængelige data for de daglige vejrmålinger
