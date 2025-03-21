@@ -19,9 +19,9 @@ Officiel API-dokumentation: [Open-Meteo.com](https://open-meteo.com/en/docs)
     - Newtonsoft.Json
     - System.Net.Http
       
-4. Du skal bruge en API URL for dette program, du kan hente en API URL fra [Open-Meteo.com](https://open-meteo.com/en/docs)\
-  
-   For at få den API URL, der passer til dette program, følg disse trin på Open-Meteo:
+4. Du skal bruge en API URL for dette program, du kan hente en API URL fra [Open-Meteo.com](https://open-meteo.com/en/docs)
+\
+For at få den API URL, der passer til dette program, følg disse trin på Open-Meteo:
 - **Location and Time**:
     - **Latitude**: 55,6759
     - **Longitude**: 12,5655
