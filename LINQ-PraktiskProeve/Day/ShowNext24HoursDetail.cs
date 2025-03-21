@@ -33,8 +33,8 @@ public class ShowNext24HoursDetail
 
             // Kombiner dataene for tid, temperatur og vindhastighed
             var weatherList =
-                times.Zip(temperatures, (t, temp) => new { Time = t, Temp = temp })
-                    .Zip(windSpeeds, (entry, wind) => new { entry.Time, entry.Temp, Wind = wind })
+                times.Zip(temperatures, (t, temp) => new { Time = t, Temp = temp }) // Kombinere `times` og `temperatures`
+                    .Zip(windSpeeds, (entry, wind) => new { entry.Time, entry.Temp, Wind = wind }) // Kombinere `windSpeeds` med `times` og `temperatures` til et objekt med `Time`, `Temp` og `Wind`
                     .Skip(currentHour)
                     .Take(25)
                     .OrderByDescending(x => x.Time)
