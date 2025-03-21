@@ -7,14 +7,21 @@ Dette er et konsolprogram, der henter og viser vejrdata fra Open-Meteo API'et. P
 
 ## Dokumentation
 
-Officiel API-dokumentation: Open-Meteo API
+Officiel API-dokumentation: [Open-Meteo.com](https://open-meteo.com/en/docs)
 
 ## Installation og Konfiguration
 
-1. Omdøb `config-example.env` til `config.env`.
-2. Åbn `config.env` og indsæt en API-URL fra Open-Meteo.com.
+1. Sørg for at have .NET installeret.
 
-For at få en API URL, der passer til dette program, følg disse trin på Open-Meteo:
+2. Clone eller download dette repository.
+
+3. Installer nødvendige NuGet-pakker:
+    - Newtonsoft.Json
+    - System.Net.Http
+      
+4. Du skal bruge en API URL for dette program, du kan hente en API URL fra [Open-Meteo.com](https://open-meteo.com/en/docs)
+
+For at få den API URL, der passer til dette program, følg disse trin på Open-Meteo:
 
 - **Location and Time**:
     - **Latitude**: 55,6759
@@ -50,13 +57,10 @@ For at få en API URL, der passer til dette program, følg disse trin på Open-M
         - Precipitation Unit: Millimeter
         - Time Format: ISO 8601 (e.g., 2025-03-20)
 
-3. Sørg for at have .NET installeret.
-4. Clone eller download dette repository.
-5. Installer nødvendige NuGet-pakker:
-    - Newtonsoft.Json
-    - System.Net.Http
+5. Omdøb `config-example.env` til `config.env`.
+6. Åbn `config.env` og indsæt en API-URL fra Open-Meteo.com.
 
-6. Kør programmet:
+7. Kør programmet:
     - Følg menuen for at navigere og se vejrdata.
 
 ## Funktioner
