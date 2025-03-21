@@ -21,8 +21,7 @@ Officiel API-dokumentation: [Open-Meteo.com](https://open-meteo.com/en/docs)
       
 4. Du skal bruge en API URL for dette program, du kan hente en API URL fra [Open-Meteo.com](https://open-meteo.com/en/docs)
 
-For at få den API URL, der passer til dette program, følg disse trin på Open-Meteo:
-
+\For at få den API URL, der passer til dette program, følg disse trin på Open-Meteo:
 - **Location and Time**:
     - **Latitude**: 55,6759
     - **Longitude**: 12,5655
@@ -30,32 +29,30 @@ For at få den API URL, der passer til dette program, følg disse trin på Open-
     - **Latitude**: 51,5085
     - **Longitude**: -0,1257
     - **Timezone**: Europe/Berlin
-
-- **Time Forecast Length**:
-    - **Forecast Days**: 7
-    - **Past Days**: 1 week
+        - **Time Forecast Length**:
+            - **Forecast Days**: 7
+            - **Past Days**: 1 week
 
 - Åben **Additional Variables and Options** og vælg **24 timer** under **Past Hours**.
-
-- **Marker følgende**:
-    - **Daily Weather Variables**:
-        - Rain Sum
-        - Maximum Temperature (2 m)
-        - Minimum Temperature (2 m)
-        - Maximum Wind Speed (10 m)
-    - **Current Weather**:
-        - Temperature (2 m)
-        - Wind Speed (10 m)
-        - Is Day or Night
-        - Rain
-    - **Hourly Weather Variables**:
-        - Temperature (2 m)
-        - Wind Speed (10 m)
-    - **Settings**:
-        - Temperature Unit: Celsius °C
-        - Wind Speed Unit: Km/h
-        - Precipitation Unit: Millimeter
-        - Time Format: ISO 8601 (e.g., 2025-03-20)
+    - **Marker følgende**:
+        - **Daily Weather Variables**:
+            - Rain Sum
+            - Maximum Temperature (2 m)
+            - Minimum Temperature (2 m)
+            - Maximum Wind Speed (10 m)
+        - **Current Weather**:
+            - Temperature (2 m)
+            - Wind Speed (10 m)
+            - Is Day or Night
+            - Rain
+        - **Hourly Weather Variables**:
+            - Temperature (2 m)
+            - Wind Speed (10 m)
+        - **Settings**:
+            - Temperature Unit: Celsius °C
+            - Wind Speed Unit: Km/h
+            - Precipitation Unit: Millimeter
+            - Time Format: ISO 8601 (e.g., 2025-03-20)
 
 5. Omdøb `config-example.env` til `config.env`.
 6. Åbn `config.env` og indsæt en API-URL fra Open-Meteo.com.
