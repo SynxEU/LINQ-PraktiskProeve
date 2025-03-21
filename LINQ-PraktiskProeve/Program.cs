@@ -157,6 +157,8 @@ namespace LINQ_PraktiskProeve
                     running = keyPress.Key != ConsoleKey.Escape && keyPress.Key != ConsoleKey.D7 &&
                               keyPress.Key != ConsoleKey.NumPad7;
                     Clear();
+                    WriteLine("\x1b[3J");
+                    Clear();
                 }
 
             } while (running); // Fortsæt løkken, hvis 'running' er sandt
