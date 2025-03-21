@@ -8,7 +8,8 @@
 4. [Funktioner](#funktioner)  
    4.1 [Minimumskrav](#minimumskrav)  
    4.2 [Ekstra funktioner](#ekstra-funktioner)
-5. [TO:DO](#todo))
+5. [TO:DO](#todo)
+6. [Kontakt](#kontakt)
 
 ## Beskrivelse
 
@@ -92,6 +93,8 @@ For at få den API URL, der passer til dette program, følg disse trin på Open-
 
 ## TO:DO
 - [ ] Saveable location
-- [ ] More generic (Works with diffrent api URLs)
+- [ ] More generic (Så det virker med forskellige api URLs)
 
-Tak fordi du bruger dette program! 🎉
+## Kontakt
+- Discord: synx_eu
+- Ikke muligt at kontakte mig på email lige nu
