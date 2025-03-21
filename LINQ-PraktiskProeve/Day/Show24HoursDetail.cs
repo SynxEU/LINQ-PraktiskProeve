@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using System.Linq;
 using LINQ_PraktiskProeve.Models;
+using Spectre.Console;
 
 namespace LINQ_PraktiskProeve.Day;
 
@@ -13,10 +14,16 @@ public class Show24HoursDetail
             || weatherData.Hourly.Temperature2M.Any()
             || weatherData.Hourly.WindSpeed10M.Any())
         {
-            int currentHour = DateTime.Now.Hour + 14;
+            int currentHour = DateTime.Now.Hour + 15;
             List<string>? times = weatherData.Hourly.Time;
             List<object>? temperatures = weatherData.Hourly.Temperature2M;
             List<object>? windSpeeds = weatherData.Hourly.WindSpeed10M;
+            
+            Table table = new Table();
+    
+            table.AddColumn("Dato");
+            table.AddColumn("Temp (°C)");
+            table.AddColumn("Max Vind (m/s)");
             
             var weatherList =
                 times.Zip(temperatures, (t, temp) => new { Time = t, Temp = temp })
@@ -26,14 +33,16 @@ public class Show24HoursDetail
                     .OrderByDescending(x => x.Time)
                     .ToList();
 
-            Console.WriteLine("Time-for-time vejr de næste 24 timer (sorteret faldende):");
             foreach (var entry in weatherList)
             {
-                Console.WriteLine(
-                    $"Tid: {DateTime.Parse(entry.Time).ToShortDateString()} {DateTime.Parse(entry.Time).TimeOfDay} " +
-                    $"| Temp: {entry.Temp}°C " +
-                    $"| Vind: {entry.Wind} m/s");
+                string tid = $"{DateTime.Parse(entry.Time).ToShortDateString()} {DateTime.Parse(entry.Time).TimeOfDay}";
+                
+                table.AddRow(tid, entry.Temp.ToString(), entry.Wind.ToString());
             }
+            Console.Clear();
+            Console.WriteLine("\x1b[3J");
+            Console.Clear();
+            AnsiConsole.Write(table);
         }
         else
         {

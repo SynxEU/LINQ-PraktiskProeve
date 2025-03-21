@@ -85,6 +85,8 @@ namespace LINQ_PraktiskProeve
             do
             {
                 Clear();
+                WriteLine("\x1b[3J");
+                Clear();
                 WriteLine($"Vejrdata for {city}");
                 WriteLine("Vælg en mulighed:");
                 WriteLine("1. Vejr lige nu");
@@ -97,6 +99,8 @@ namespace LINQ_PraktiskProeve
                 Write("Indtast valg (1-7): ");
                 ConsoleKeyInfo choice = ReadKey();
 
+                Clear();
+                WriteLine("\x1b[3J");
                 Clear();
 
                 switch (choice.Key)

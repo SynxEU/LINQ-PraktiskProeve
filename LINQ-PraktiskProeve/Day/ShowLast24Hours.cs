@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using LINQ_PraktiskProeve.Models;
+using Spectre.Console;
 
 namespace LINQ_PraktiskProeve.Day;
 
@@ -15,14 +16,24 @@ public class ShowLast24Hours
             List<string>? times = weatherData.Hourly?.Time ?? new List<string>();
             List<object>? temperatures = weatherData.Hourly?.Temperature2M ?? new List<object>();
             List<object>? windSpeeds = weatherData.Hourly?.WindSpeed10M ?? new List<object>();
-            Console.WriteLine("Vejret de seneste 24 timer:");
+
+            Table table = new Table();
+    
+            table.AddColumn("Dato");
+            table.AddColumn("Temp (°C)");
+            table.AddColumn("Max Vind (m/s)");
+
+            
             for (int i = 0; i < 25; i++)
             {
-                Console.WriteLine(
-                    $"Tid: {DateTime.Parse(times[i]).ToShortDateString()} {DateTime.Parse(times[i]).TimeOfDay} " +
-                    $"| Temp: {temperatures[i]}°C " +
-                    $"| Vind: {windSpeeds[i]} m/s");
+                string tid = $"{DateTime.Parse(times[i]).ToShortDateString()} {DateTime.Parse(times[i]).TimeOfDay}";
+                
+                table.AddRow(tid, temperatures[i].ToString(), windSpeeds[i].ToString());
             }
+            Console.Clear();
+            Console.WriteLine("\x1b[3J");
+            Console.Clear();
+            AnsiConsole.Write(table);
         }
         else
         {
