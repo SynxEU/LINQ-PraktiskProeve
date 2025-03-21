@@ -8,6 +8,7 @@
 4. [Funktioner](#funktioner)  
    4.1 [Minimumskrav](#minimumskrav)  
    4.2 [Ekstra funktioner](#ekstra-funktioner)
+5. [TO:DO](#todo))
 
 ## Beskrivelse
 
@@ -87,5 +88,10 @@ For at få den API URL, der passer til dette program, følg disse trin på Open-
     - Vejret de seneste 24 timer.
     - Vejret den seneste uge som et dagsskema i konsollen.
 - Mulighed for at vælge og gemme en by, så programmet husker den ved næste opstart.
+
+
+## TO:DO
+- [ ] Saveable location
+- [ ] More generic (Works with diffrent api URLs)
 
 Tak fordi du bruger dette program! 🎉
