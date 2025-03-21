@@ -115,7 +115,7 @@ namespace LINQ_PraktiskProeve
                         ShowNext24Hours.ShowNext24HoursSummary(weatherData);
                         break;
                     case ConsoleKey.D4:
-                        Show24HoursDetail.ShowNext24HoursDetailed(weatherData);
+                        ShowNext24HoursDetail.ShowNext24HoursDetailed(weatherData);
                         break;
                     case ConsoleKey.D5:
                         ShowLastWeek.ShowLastWeekWeather(weatherData);

@@ -6,7 +6,7 @@ using Spectre.Console;
 
 namespace LINQ_PraktiskProeve.Day;
 
-public class Show24HoursDetail
+public class ShowNext24HoursDetail
 {
     public static void ShowNext24HoursDetailed(Root weatherData)
     {
